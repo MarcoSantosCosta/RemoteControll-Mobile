@@ -31,6 +31,7 @@ public class Connect extends AsyncTask<Void, Void, Void> {
     public boolean connect() {
         try {
             this.socket = new Socket(this.ip, this.port);
+
         } catch (IOException e) {
             e.printStackTrace();
             return false;
@@ -70,11 +71,11 @@ public class Connect extends AsyncTask<Void, Void, Void> {
                 long now = System.currentTimeMillis();
                 if (now - last > 100) {
                     send(output);
-                   // recive(input);
+                    // recive(input);
                     last = now;
                 }
             }
-        } catch (IOException  e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
