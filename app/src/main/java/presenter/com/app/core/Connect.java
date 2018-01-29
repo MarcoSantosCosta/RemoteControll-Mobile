@@ -28,14 +28,14 @@ public class Connect extends AsyncTask<Void, Void, Void> {
     }
 
     public boolean connect() {
-        Socket client = null;
+        //Socket client = null;
         try {
-            client = new Socket(this.ip, this.port);
+            this.socket = new Socket(ip, port);
         } catch (IOException e) {
             e.printStackTrace();
             return false;
         }
-        return client != null;
+        return this.socket != null;
     }
 
     public void send(ObjectOutputStream output) throws IOException {
@@ -61,6 +61,8 @@ public class Connect extends AsyncTask<Void, Void, Void> {
 
     @Override
     protected Void doInBackground(Void... voids) {
+        connect();
+
         try {
             ObjectOutputStream output = new ObjectOutputStream(this.socket.getOutputStream());
             ObjectInputStream input = new ObjectInputStream(this.socket.getInputStream());
@@ -69,11 +71,11 @@ public class Connect extends AsyncTask<Void, Void, Void> {
                 long now = System.currentTimeMillis();
                 if (now - last > 100) {
                     send(output);
-                    recive(input);
+//                    recive(input);
                     last = now;
                 }
             }
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;

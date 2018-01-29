@@ -8,25 +8,38 @@
 
     <Button
         android:id="@+id/prev"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_width="121dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
         android:onClick="prev"
-        android:text="Button"
+        android:text="PREV"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="231dp" />
+        app:layout_constraintTop_toBottomOf="@+id/conect"
+        app:layout_constraintVertical_bias="0.502"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="126dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="88dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:onClick="next"
-        android:text="Button"
+        android:text="NEXT"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="231dp" />
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintStart_toEndOf="@+id/prev"
+        app:layout_constraintTop_toBottomOf="@+id/conect"
+        app:layout_constraintVertical_bias="0.501"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/conect"
@@ -34,10 +47,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
-        android:text="Button"
+        android:layout_marginTop="144dp"
         android:onClick="conect"
+        android:text="CONNECT"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
