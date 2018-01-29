@@ -34,7 +34,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void conect(View v){
-        Connect c = new Connect();
+        Connect c = new Connect("192.168.0.101",12345);
         c.execute();
     }
 }
